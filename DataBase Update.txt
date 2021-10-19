@@ -1,0 +1,5 @@
+from DL: 
+	dotnet ef migrations add *MigrationName* -c BattleshipDBContext --startup-project ..\WebAPI
+
+from WebAPI: 
+	ef database update
