@@ -14,7 +14,5 @@ namespace DL
         public DbSet<Match> Match { get; set; }
         public DbSet<Turn> Turn { get; set; }
         public DbSet<User> User { get; set; }
-
-
     }
 }
