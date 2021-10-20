@@ -30,16 +30,16 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-            services.AddScoped<IRepo, DBRepo>();
-            services.AddScoped<IBL, BL>();
             services.AddControllers();
-            services.AddDbContext<BattleshipDBContext>(options =>
-            options.UseNpgsql(Configuration.GetConnectionString("BattleshipDB")));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPI", Version = "v1" });
             });
+
+            services.AddDbContext<BattleshipDBContext>(options =>
+            options.UseNpgsql(Configuration.GetConnectionString("BattleshipDB")));
+            services.AddScoped<IRepo, DBRepo>();
+            services.AddScoped<IBL, BL>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

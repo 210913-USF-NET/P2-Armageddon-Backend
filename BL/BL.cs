@@ -89,5 +89,10 @@ namespace BattleshipBL
         {
             await _repo.UpdateObjectAsync(objectToUpdate);
         }
+
+        public async Task<List<User>> GetUsersByNameAsync(string entry)
+        {
+            return await _repo.GetUsersByNameAsync(entry);
+        }
     }
 }
