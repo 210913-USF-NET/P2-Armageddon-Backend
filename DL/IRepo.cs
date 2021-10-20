@@ -36,5 +36,7 @@ namespace DL
         Task<List<Layout>> GetAllLayoutsAsync();
 
         Task<List<Friends>> GetAllFriendsAsync();
+
+        Task<List<User>> GetUsersByNameAsync(string entry);
     }
 }

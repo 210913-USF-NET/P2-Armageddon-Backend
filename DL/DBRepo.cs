@@ -97,5 +97,11 @@ namespace DL
             return await _context.User.AsNoTracking().Include(u => u.totalMatches).Include(u => u.totalWins).FirstOrDefaultAsync(u => u.Id == userId);
         }
 
+        public async Task<List<User>> GetUsersByNameAsync(string entry)
+        {
+            // [[TODO]] modify WHERE to be CONTAINS(entry) instead
+            return await _context.User.Select(u => u).Where(u => u.Username == entry).ToListAsync();
+        }
+
     }
 }
