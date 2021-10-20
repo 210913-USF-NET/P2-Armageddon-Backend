@@ -42,7 +42,7 @@ namespace WebAPI.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet]
+        [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
             ChatHistory foundChatHistory = await _bl.GetChatHistoryByIdAsync(id);

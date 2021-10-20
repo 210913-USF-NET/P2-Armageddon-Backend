@@ -94,7 +94,7 @@ namespace DL
 
         public async Task<User> GetOneUserByIdAsync(int userId)
         {
-            return await _context.User.AsNoTracking().Include(u => u.totalMatches).Include(u => u.totalWins).FirstOrDefaultAsync(u => u.Id == userId);
+            return await _context.User.AsNoTracking().FirstOrDefaultAsync(u => u.Id == userId);
         }
 
         public async Task<List<User>> GetUsersByNameAsync(string entry)
