@@ -43,6 +43,6 @@ namespace BattleshipBL
 
         Task<List<User>> GetUsersByNameAsync(string entry);
 
-        Task<User> GetOneUserByEmailAsync(string email);
+        Task<User> GetOneUserByUsernameAsync(string username);
     }
 }
