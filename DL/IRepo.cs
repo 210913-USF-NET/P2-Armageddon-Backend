@@ -38,5 +38,7 @@ namespace DL
         Task<List<Friends>> GetAllFriendsAsync();
 
         Task<List<User>> GetUsersByNameAsync(string entry);
+
+        Task<User> GetOneUserByEmailAsync(string email);
     }
 }
