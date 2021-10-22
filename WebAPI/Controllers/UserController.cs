@@ -42,10 +42,24 @@ namespace WebAPI.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet("{id}")]
+        [HttpGet("id/{id}")]
         public async Task<IActionResult> Get(int id)
         {
             User foundUser = await _bl.GetOneUserByIdAsync(id);
+            if (foundUser != null)
+            {
+                return Ok(foundUser);
+            }
+            else
+            {
+                return NoContent();
+            }
+        }
+
+        [HttpGet("email/{email}")]
+        public async Task<IActionResult> Get(string email)
+        {
+            User foundUser = await _bl.GetOneUserByEmailAsync(email);
             if (foundUser != null)
             {
                 return Ok(foundUser);

@@ -96,6 +96,10 @@ namespace DL
         {
             return await _context.User.AsNoTracking().FirstOrDefaultAsync(u => u.Id == userId);
         }
+        public async Task<User> GetOneUserByEmailAsync(string email)
+        {
+            return await _context.User.AsNoTracking().FirstOrDefaultAsync(u => u.Email == email);
+        }
 
         public async Task<List<User>> GetUsersByNameAsync(string entry)
         {
