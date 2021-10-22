@@ -56,10 +56,10 @@ namespace WebAPI.Controllers
             }
         }
 
-        [HttpGet("email/{email}")]
-        public async Task<IActionResult> Get(string email)
+        [HttpGet("username/{username}")]
+        public async Task<IActionResult> Get(string username)
         {
-            User foundUser = await _bl.GetOneUserByEmailAsync(email);
+            User foundUser = await _bl.GetOneUserByUsernameAsync(username);
             if (foundUser != null)
             {
                 return Ok(foundUser);

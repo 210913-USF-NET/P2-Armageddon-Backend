@@ -95,9 +95,9 @@ namespace BattleshipBL
             return await _repo.GetUsersByNameAsync(entry);
         }
 
-        public async Task<User> GetOneUserByEmailAsync(string email)
+        public async Task<User> GetOneUserByUsernameAsync(string username)
         {
-            return await _repo.GetOneUserByEmailAsync(email);
+            return await _repo.GetOneUserByUsernameAsync(username);
         }
     }
 }
