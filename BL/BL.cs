@@ -14,6 +14,10 @@ namespace BattleshipBL
         {
             _repo = repo;
         }
+        public async Task<List<Friends>> GetFriendsBySelfIdAsync(int selfId)
+        {
+            return await _repo.GetFriendsBySelfIdAsync(selfId);
+        }
 
         public async Task<object> AddObjectAsync(object objectToAdd)
         {
