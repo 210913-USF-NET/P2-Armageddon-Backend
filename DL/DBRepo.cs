@@ -76,6 +76,10 @@ namespace DL
         {
             return await _context.Friends.AsNoTracking().FirstOrDefaultAsync(f => f.Id == friendsId);
         }
+        public async Task<List<Friends>> GetFriendsBySelfIdAsync(int selfId)
+        {
+            return await _context.Friends.Where(f => f.user1Id == selfId || f.user2Id==selfId).ToListAsync();
+        }
 
         public async Task<Layout> GetLayoutByIdAsync(int layoutId)
         {

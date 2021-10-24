@@ -9,6 +9,7 @@ namespace DL
 {
     public interface IRepo
     {
+        Task<List<Friends>> GetFriendsBySelfIdAsync(int selfId);
         Task<Object> AddObjectAsync(Object objectToAdd);
         Task UpdateObjectAsync(Object objectToUpdate);
 
