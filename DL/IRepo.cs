@@ -10,7 +10,7 @@ namespace DL
     public interface IRepo
     {
         Task<User> AddObjectAsync(User objectToAdd);
-
+        Task<List<Friends>> GetFriendsBySelfIdAsync(int selfId);
         Task<Object> AddObjectAsync(Object objectToAdd);
         Task UpdateObjectAsync(Object objectToUpdate);
 

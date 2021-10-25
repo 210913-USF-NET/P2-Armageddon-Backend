@@ -14,8 +14,11 @@ namespace BattleshipBL
         /// </summary>
         /// <param name="objectToAdd"></param>
         /// <returns>corresponding object from the DB</returns>
+      
         Task<User> AddObjectAsync(User objectToAdd);
+      
         Task<Object> AddObjectAsync(Object objectToAdd);
+      
         Task UpdateObjectAsync(Object objectToUpdate);
 
         Task DeleteObjectAsync(Object objectToDelete);
@@ -26,7 +29,7 @@ namespace BattleshipBL
 
         Task<Turn> GetOneTurnByIdAsync(int turnId);
         Task<ChatHistory> GetChatHistoryByIdAsync(int chatHistoryId);
-
+        Task<List<Friends>> GetFriendsBySelfIdAsync(int selfId);
         Task<Friends> GetFriendsByIdAsync(int friendsId);
 
         Task<Layout> GetLayoutByIdAsync(int layoutId);
