@@ -5,7 +5,7 @@ namespace Models
 {
     public class Turn
     {
-        Turn() {}
+        public Turn() {}
         public int Id {get; set;}
         public int playerId {get; set;}
         public int targetId {get; set;}
