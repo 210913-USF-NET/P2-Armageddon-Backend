@@ -40,9 +40,9 @@ namespace WebAPI.Controllers
         /// for Login and Friend Page
         /// get by api/Friend/<id>
         /// </summary>
-        /// <param name="selfId"></param>
+        /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet("{selfId}")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
             List<Friends> foundFriend = await _bl.GetFriendsBySelfIdAsync(id);
