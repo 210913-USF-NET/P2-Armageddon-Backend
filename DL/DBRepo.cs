@@ -8,6 +8,7 @@ using Models;
 
 namespace DL
 {
+
     public class DBRepo : IRepo
     {
         private BattleshipDBContext _context;
@@ -15,7 +16,13 @@ namespace DL
         {
             _context = context;
         }
-
+        public async Task<User> AddObjectAsync(User objectToAdd)
+        {
+            await _context.AddAsync(objectToAdd);
+            await _context.SaveChangesAsync();
+            _context.ChangeTracker.Clear();
+            return objectToAdd;
+        }
         public async Task<Object> AddObjectAsync(Object objectToAdd)
         {
             await _context.AddAsync(objectToAdd);

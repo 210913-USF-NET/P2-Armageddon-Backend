@@ -5,7 +5,7 @@ namespace Models
 {
     public class Layout
     {
-        Layout() {}
+        public Layout() {}
         public int Id {get; set;}
         public int PlayerId {get; set;}
         public int MatchId {get; set;}

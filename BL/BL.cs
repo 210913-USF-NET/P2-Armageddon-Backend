@@ -15,6 +15,10 @@ namespace BattleshipBL
             _repo = repo;
         }
 
+        public async Task<User> AddObjectAsync(User objectToAdd)
+        {
+            return await _repo.AddObjectAsync(objectToAdd);
+        }
         public async Task<object> AddObjectAsync(object objectToAdd)
         {
             return await _repo.AddObjectAsync(objectToAdd);

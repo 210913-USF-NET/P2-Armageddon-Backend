@@ -9,6 +9,8 @@ namespace DL
 {
     public interface IRepo
     {
+        Task<User> AddObjectAsync(User objectToAdd);
+
         Task<Object> AddObjectAsync(Object objectToAdd);
         Task UpdateObjectAsync(Object objectToUpdate);
 
