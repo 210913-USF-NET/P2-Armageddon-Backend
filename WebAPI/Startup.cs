@@ -15,6 +15,7 @@ using BattleshipBL;
 using DL;
 using Models;
 using Microsoft.EntityFrameworkCore;
+using WebAPI.Hubs;
 
 namespace WebAPI
 {
@@ -68,6 +69,7 @@ namespace WebAPI
             app.UseCors("CorsPolicy");
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapHub<ChatHub>("message");
                 endpoints.MapControllers();
             });
         }
