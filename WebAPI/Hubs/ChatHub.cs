@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace WebAPI.Hubs
 {
-    public class ChatHub : Hub                                              // inherit this
+    public class ChatHub : Hub                                      
     {
-        public Task SendMessage1(string user, string message)               // Two parameters accepted
+        public Task SendMessage1(string user, string message)        
         {
-            return Clients.All.SendAsync("ReceiveOne", user, message);    // Note this 'ReceiveOne' 
+            return Clients.All.SendAsync("ReceiveOne", user, message);    
         }
     }
 }
