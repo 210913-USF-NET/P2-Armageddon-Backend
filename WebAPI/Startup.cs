@@ -15,6 +15,7 @@ using BattleshipBL;
 using DL;
 using Models;
 using Microsoft.EntityFrameworkCore;
+using WebAPI.Hubs;
 
 namespace WebAPI
 {
@@ -69,6 +70,7 @@ namespace WebAPI
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<ChatHub>("/chatsocket");
             });
         }
     }
