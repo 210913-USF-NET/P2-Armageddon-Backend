@@ -41,11 +41,11 @@ namespace WebAPI
             services.AddScoped<IRepo, DBRepo>();
             services.AddScoped<IBL, BL>();
             services.AddSignalR();
-            services.AddCors(opt => opt.AddPolicy("CorsPolicy",
+            services.AddCors(opt=>opt.AddPolicy("CorsPolicy",
                 builder =>
                 {
                     builder.AllowAnyMethod().AllowAnyHeader()
-                    .WithOrigins("https://armageddonapi.azurewebsites.net/api")
+                    .WithOrigins("https://localhost:4200/")
                     .AllowCredentials();
                 }));
         }
