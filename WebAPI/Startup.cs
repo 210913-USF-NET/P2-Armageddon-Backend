@@ -45,7 +45,7 @@ namespace WebAPI
                 builder =>
                 {
                     builder.AllowAnyMethod().AllowAnyHeader()
-                    .WithOrigins("http://localhost:4200/")
+                    .WithOrigins("https://armageddonapi.azurewebsites.net/api")
                     .AllowCredentials();
                 }));
         }
