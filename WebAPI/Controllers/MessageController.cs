@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,7 @@ namespace WebAPI.Controllers
         public IActionResult Post()
         {
             //broadcast message
+            this.Response.Headers.Add("Access-Control-Allow-Origin", "*");
             _messageHubContext.Clients.All.SendAsync("send", "Hello!");
 
             return Ok();
