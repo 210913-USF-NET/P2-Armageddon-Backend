@@ -4,9 +4,7 @@ namespace Models
 {
     public class Match
     {
-        public Match() {
-            this.OpponentIds = new List<int>();
-        }
+        public Match() { }
         public Match(int id, int hostId, int turnCount, int winnerId) : this()
         {
             this.Id = id;
@@ -19,7 +17,7 @@ namespace Models
         public int HostId { get; set; }
         public int TurnCount { get; set; }
         public int WinnerId { get; set; }
-        List<int> OpponentIds { get; set; }
+        public int OpponentId { get; set; }
 
     }
 }

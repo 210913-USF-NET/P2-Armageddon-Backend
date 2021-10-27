@@ -10,7 +10,7 @@ namespace Models
         public int PlayerId {get; set;}
         public int MatchId {get; set;}
         public string shipType {get; set;}
-        public List<int> startLocation {get; set;}
+        public int startLocation {get; set;}
         public string direction {get; set;}
 
     }
