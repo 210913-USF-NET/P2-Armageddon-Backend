@@ -53,11 +53,6 @@ namespace BattleshipBL
             return await _repo.GetAllMatchesAsync();
         }
 
-        public async Task<List<Turn>> GetAllTurnsAsync()
-        {
-            return await _repo.GetAllTurnsAsync();
-        }
-
         public async Task<List<User>> GetAllUsersAsync()
         {
             return await _repo.GetAllUsersAsync();
@@ -83,9 +78,13 @@ namespace BattleshipBL
             return await _repo.GetOneMatchByIdAsync(matchId);
         }
 
-        public async Task<Turn> GetOneTurnByIdAsync(int turnId)
+        public async Task<List<Turn>> GetTurnsByIdAsync(int turnId)
         {
-            return await _repo.GetOneTurnByIdAsync(turnId);
+            return await _repo.GetTurnsByIdAsync(turnId);
+        }
+        public async Task<List<Turn>> GetAllTurnsAsync()
+        {
+            return await _repo.GetAllTurnsAsync();
         }
 
         public async Task<User> GetOneUserByIdAsync(int userId)

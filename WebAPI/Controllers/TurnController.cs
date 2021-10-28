@@ -45,10 +45,11 @@ namespace WebAPI.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
-            Turn foundTurn = await _bl.GetOneTurnByIdAsync(id);
-            if (foundTurn != null)
+            List<Turn> foundTurns = await _bl.GetTurnsByIdAsync(id);
+            foundTurns.OrderBy(x => x.turnNumber);
+            if (foundTurns != null && foundTurns.Count > 0)
             {
-                return Ok(foundTurn);
+                return Ok(foundTurns);
             }
             else
             {

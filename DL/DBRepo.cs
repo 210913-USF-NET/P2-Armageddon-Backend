@@ -93,9 +93,9 @@ namespace DL
         {
             return await _context.Turn.Select(t => t).ToListAsync();
         }
-        public async Task<Turn> GetOneTurnByIdAsync(int matchId)
+        public async Task<List<Turn>> GetTurnsByIdAsync(int matchId)
         {
-            return await _context.Turn.AsNoTracking().FirstOrDefaultAsync(t => t.matchId == matchId);
+            return await _context.Turn.Select(t => t).Where(t => t.matchId == matchId).ToListAsync();
         }
 
         // User Methods

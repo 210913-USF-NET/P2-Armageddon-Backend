@@ -27,7 +27,8 @@ namespace BattleshipBL
 
         Task<Match> GetOneMatchByIdAsync(int matchId);
 
-        Task<Turn> GetOneTurnByIdAsync(int turnId);
+        Task<List<Turn>> GetTurnsByIdAsync(int turnId);
+        Task<List<Turn>> GetAllTurnsAsync();
         Task<ChatHistory> GetChatHistoryByIdAsync(int chatHistoryId);
         Task<List<Friends>> GetFriendsBySelfIdAsync(int selfId);
         Task<Friends> GetFriendsByIdAsync(int friendsId);
@@ -38,7 +39,6 @@ namespace BattleshipBL
 
         Task<List<Match>> GetAllMatchesAsync();
 
-        Task<List<Turn>> GetAllTurnsAsync();
 
         Task<List<ChatHistory>> GetAllChatHistoriesAsync();
 
