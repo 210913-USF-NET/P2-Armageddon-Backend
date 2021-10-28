@@ -86,11 +86,11 @@ namespace WebAPI.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpDelete("{Id}")]
-        public async Task Delete(int id)
-        {
-            Turn deleteTurn = (Turn) await _bl.GetOneTurnByIdAsync(id);
-            await _bl.DeleteObjectAsync(deleteTurn);
-        }
+        //[HttpDelete("{Id}")]
+        //public async Task Delete(int id)
+        //{
+        //    Turn deleteTurn = (Turn) await _bl.GetOneTurnByIdAsync(id);
+        //    await _bl.DeleteObjectAsync(deleteTurn);
+        //}
     }
 }
