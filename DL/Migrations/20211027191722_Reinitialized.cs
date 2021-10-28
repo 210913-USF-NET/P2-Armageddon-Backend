@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace DL.Migrations
 {
-    public partial class migration : Migration
+    public partial class Reinitialized : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,7 +15,6 @@ namespace DL.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     UserId = table.Column<int>(type: "integer", nullable: false),
-                    MatchId = table.Column<int>(type: "integer", nullable: false),
                     Message = table.Column<string>(type: "text", nullable: true),
                     Time = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
                 },
@@ -48,7 +46,7 @@ namespace DL.Migrations
                     PlayerId = table.Column<int>(type: "integer", nullable: false),
                     MatchId = table.Column<int>(type: "integer", nullable: false),
                     shipType = table.Column<string>(type: "text", nullable: true),
-                    startLocation = table.Column<List<int>>(type: "integer[]", nullable: true),
+                    startLocation = table.Column<int>(type: "integer", nullable: false),
                     direction = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
@@ -81,7 +79,7 @@ namespace DL.Migrations
                     playerId = table.Column<int>(type: "integer", nullable: false),
                     targetId = table.Column<int>(type: "integer", nullable: false),
                     matchId = table.Column<int>(type: "integer", nullable: false),
-                    shotLocation = table.Column<List<int>>(type: "integer[]", nullable: true),
+                    shotLocation = table.Column<int>(type: "integer", nullable: false),
                     turnNumber = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
@@ -96,7 +94,7 @@ namespace DL.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Username = table.Column<string>(type: "text", nullable: true),
-                    Password = table.Column<string>(type: "text", nullable: true),
+                    Email = table.Column<string>(type: "text", nullable: true),
                     winStreak = table.Column<int>(type: "integer", nullable: false),
                     shotStreak = table.Column<int>(type: "integer", nullable: false),
                     totalWins = table.Column<int>(type: "integer", nullable: false),

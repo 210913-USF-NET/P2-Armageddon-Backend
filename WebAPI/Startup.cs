@@ -71,6 +71,7 @@ namespace WebAPI
             app.UseCors("CorsPolicy");
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapHub<ChatHub>("message");
                 endpoints.MapControllers();
                 endpoints.MapHub<ChatHub>("/chatsocket");
             });
