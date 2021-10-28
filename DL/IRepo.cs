@@ -20,7 +20,8 @@ namespace DL
 
         Task<Match> GetOneMatchByIdAsync(int matchId);
 
-        Task<Turn> GetOneTurnByIdAsync(int turnId);
+        Task<List<Turn>> GetTurnsByIdAsync(int turnId);
+        Task<List<Turn>> GetAllTurnsAsync();
         Task<ChatHistory> GetChatHistoryByIdAsync(int chatHistoryId);
 
         Task<Friends> GetFriendsByIdAsync(int friendsId);
@@ -31,7 +32,6 @@ namespace DL
 
         Task<List<Match>> GetAllMatchesAsync();
 
-        Task<List<Turn>> GetAllTurnsAsync();
 
         Task<List<ChatHistory>> GetAllChatHistoriesAsync();
 
