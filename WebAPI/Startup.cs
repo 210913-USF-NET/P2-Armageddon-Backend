@@ -41,18 +41,18 @@ namespace WebAPI
             options.UseNpgsql(Configuration.GetConnectionString("BattleshipDB")));
             services.AddScoped<IRepo, DBRepo>();
             services.AddScoped<IBL, BL>();
+            services.AddAuthentication();
+            services.AddAuthorization();
             services.AddSignalR();
-            services.AddCors(opt=>opt.AddPolicy("CorsPolicy",
-                builder =>
-                {
-                    builder
-                    .WithOrigins("127.0.0.1:4200")
-                    //.AllowAnyOrigin()
-                    .AllowAnyMethod()
-                    .AllowAnyHeader()
-                    .AllowCredentials();
-                }));
-            services.AddControllers();
+
+            services.AddCors(options => options.AddPolicy("CorsPolicy",
+            builder =>
+            {
+                builder.AllowAnyMethod().AllowAnyHeader()
+                       .AllowCredentials()
+                       .WithOrigins("http://localhost:4200");
+            }));
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,11 +64,11 @@ namespace WebAPI
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPI v1"));
             }
-            app.UseWebSockets();
             app.UseHttpsRedirection();
             app.UseRouting();
-            app.UseCors();
+            app.UseAuthentication();
             app.UseAuthorization();
+            app.UseCors("CorsPolicy");
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapHub<ChatHub>("message");

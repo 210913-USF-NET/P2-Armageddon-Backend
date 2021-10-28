@@ -8,8 +8,10 @@ using Microsoft.AspNetCore.SignalR;
 using WebAPI.Hubs;
 using WebAPI.ReqDto;
 
+
 namespace WebAPI.Controllers
 {
+    [Produces("application/json")]
     [Route("api/chat")]
     [ApiController]
     public class ChatController : ControllerBase
